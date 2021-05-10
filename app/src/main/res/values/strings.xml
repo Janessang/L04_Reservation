@@ -4,7 +4,6 @@
     <string name = "number">Mobile Number</string>
     <string name = "size">Size of Group</string>
     <string name = "sArea">Smoking Area</string>
-    <string name = "nsArea">Non-Smoking Area</string>
     <string name = "reset">Reset</string>
-    <string name = "check">Check</string>
+    <string name = "reserve">Reserve</string>
 </resources>

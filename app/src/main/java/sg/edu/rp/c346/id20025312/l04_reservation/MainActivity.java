@@ -44,24 +44,28 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String timeIs = "Time is " + tp.getCurrentHour() + ":" + tp.getCurrentMinute();
-                String dateIs = "Date is " + dp.getDayOfMonth() + "/" + dp.getMonth()+1 + "/" + dp.getYear();
+                String dateIs = "Date is " + dp.getDayOfMonth() + "/" + (dp.getMonth()+1) + "/" + dp.getYear();
                 if (sArea.isChecked()) {
-                    tvDisplay.setText("Seating Area: Smoking Area");
+                    tvDisplay.setText(String.format("Name: %s\nMobile Number: %s\nSize of Group: %s\n%s\n%s\nSeating Area: Smoking Area",cusName.getText(),cusNum.getText(),size.getText(),dateIs,timeIs));
 
                 } else {
-                    tvDisplay.setText("Seating Area: Non-Smoking Area");
+                    tvDisplay.setText(String.format("Name: %s\nMobile Number: %s\nSize of Group: %s\n%s\n%s\nSeating Area: Non-Smoking Area",cusName.getText(),cusNum.getText(),size.getText(),dateIs,timeIs));
                 }
 
-                tvDisplay.setText("Name: " + cusName + "\nMobile Number: " + cusNum + "\nSize of Group: " + size + "\n" + dateIs + "\n" + timeIs + "\nSeating Area: " + sArea);
             }
         });
 
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                cusName.setText("");
+                cusNum.setText("");
+                size.setText("");
+                sArea.setChecked(false);
                 tp.setCurrentHour(19);
                 tp.setCurrentMinute(30);
                 dp.updateDate(2020, 5,01);
+                tvDisplay.setText("");
             }
         });
 
